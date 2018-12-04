@@ -1,0 +1,2 @@
+table_add forward set_destination 10.0.2.10 10.0.2.10 => 00:04:00:00:00:00 10.0.0.10 0 0
+table_add forward set_destination 10.0.2.10 10.0.2.10 => 00:04:00:00:00:03 10.0.3.10 1 3

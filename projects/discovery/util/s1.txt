@@ -1,0 +1,14 @@
+table_set_default nat_table _drop
+table_set_default set_mcg _drop
+table_add set_mcg set_output_mcg 10.0.0.10 10.0.1.10 => 1
+table_add nat_table do_nat 3 10.0.0.10 => 66:93:47:a9:f1:0f 10.0.1.10
+table_add nat_table do_nat 4 10.0.0.10 => 0a:cb:16:ec:0f:03 10.0.1.10
+mc_node_create 1 1
+mc_node_create 2 2
+mc_node_create 3 3
+mc_node_create 4 4
+mc_mgrp_create 1
+mc_node_associate 1 0
+mc_node_associate 1 1
+mc_node_associate 1 2
+mc_node_associate 1 3

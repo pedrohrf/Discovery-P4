@@ -1,0 +1,12 @@
+table_set_default nat_table _drop
+table_set_default set_mcg _drop
+table_add set_mcg set_output_mcg 10.0.4.10 => 1
+table_add nat_table do_nat 1 10.0.4.10 => f2:e8:ac:53:f3:19
+table_add nat_table do_nat 2 10.0.4.10 => e6:85:b2:4e:59:02
+table_add discovery discovery 10.0.1.10 => 1
+table_add discovery discovery 10.0.2.10 => 2
+mc_node_create 1 1
+mc_node_create 2 2
+mc_mgrp_create 1
+mc_node_associate 1 2
+mc_node_associate 1 3
